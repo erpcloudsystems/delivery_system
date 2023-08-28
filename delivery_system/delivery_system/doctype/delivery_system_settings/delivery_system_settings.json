@@ -1,0 +1,190 @@
+{
+ "actions": [],
+ "creation": "2019-09-05 09:20:17.100191",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "skip_order_review",
+  "delivery_must_be_confirmed_by_shipping_source",
+  "delivery_car_required",
+  "car_drive_required",
+  "create_material_transfer_in_draft_mode_required",
+  "column_break_3",
+  "send_an_alert_to_shipping_source_when_process_shipment",
+  "send_an_alert_to_customer_upon_approval__of_shipment",
+  "send_an_alert_to_customer_when_shipment_not_approved",
+  "section_break_9",
+  "generate_permissions",
+  "roles_added",
+  "column_break_12",
+  "generate_standard_permissions",
+  "standard_roles_added",
+  "section_break_15",
+  "migrate_territory_group",
+  "column_break_17",
+  "update_territory",
+  "section_break_19",
+  "create_error_report_doshp",
+  "column_break_21",
+  "create_error_report_dodel",
+  "section_break_23",
+  "create_payment_methods"
+ ],
+ "fields": [
+  {
+   "default": "0",
+   "fieldname": "skip_order_review",
+   "fieldtype": "Check",
+   "label": "Skip Order Review"
+  },
+  {
+   "default": "0",
+   "fieldname": "delivery_must_be_confirmed_by_shipping_source",
+   "fieldtype": "Check",
+   "label": "Delivery Must Be Confirmed By Shipping Source"
+  },
+  {
+   "fieldname": "column_break_3",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "send_an_alert_to_shipping_source_when_process_shipment",
+   "fieldtype": "Check",
+   "label": "Send An Alert To Shipping Source When Process Shipment "
+  },
+  {
+   "default": "0",
+   "fieldname": "send_an_alert_to_customer_upon_approval__of_shipment",
+   "fieldtype": "Check",
+   "label": "Send An Alert To Customer Upon Approval  Of Shipment"
+  },
+  {
+   "default": "0",
+   "fieldname": "send_an_alert_to_customer_when_shipment_not_approved",
+   "fieldtype": "Check",
+   "label": "Send An Alert To Customer When Shipment Not Approved"
+  },
+  {
+   "default": "0",
+   "fieldname": "delivery_car_required",
+   "fieldtype": "Check",
+   "label": "Delivery Car Required"
+  },
+  {
+   "default": "0",
+   "fieldname": "car_drive_required",
+   "fieldtype": "Check",
+   "label": "Car Drive Required"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break",
+   "label": "Permission Migration"
+  },
+  {
+   "fieldname": "generate_permissions",
+   "fieldtype": "Button",
+   "label": "Generate Delivery System Permissions"
+  },
+  {
+   "default": "0",
+   "fieldname": "roles_added",
+   "fieldtype": "Check",
+   "label": "Roles Added For Delivery System",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "migrate_territory_group",
+   "fieldtype": "Button",
+   "label": "Migrate Territory Group"
+  },
+  {
+   "fieldname": "update_territory",
+   "fieldtype": "Button",
+   "label": "Update Territory"
+  },
+  {
+   "fieldname": "generate_standard_permissions",
+   "fieldtype": "Button",
+   "label": "Generate Standard Permissions"
+  },
+  {
+   "fieldname": "column_break_12",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "standard_roles_added",
+   "fieldtype": "Check",
+   "label": "Standard Roles Added",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_15",
+   "fieldtype": "Section Break",
+   "label": "Territory Migration"
+  },
+  {
+   "fieldname": "column_break_17",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_19",
+   "fieldtype": "Section Break",
+   "label": "Find Error in Delivery Orders"
+  },
+  {
+   "default": "0",
+   "fieldname": "create_error_report_doshp",
+   "fieldtype": "Button",
+   "label": "Create Error Report DOSHP"
+  },
+  {
+   "fieldname": "column_break_21",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "create_error_report_dodel",
+   "fieldtype": "Button",
+   "label": "Create Error Report DODEL"
+  },
+  {
+   "fieldname": "section_break_23",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "create_payment_methods",
+   "fieldtype": "Button",
+   "label": "Create Payment Methods"
+  },
+  {
+   "default": "0",
+   "fieldname": "create_material_transfer_in_draft_mode_required",
+   "fieldtype": "Check",
+   "label": "Create Material Transfer In Draft Mode Required"
+  }
+ ],
+ "issingle": 1,
+ "links": [],
+ "modified": "2022-04-17 20:53:29.604565",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Delivery System Settings",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "read": 1,
+   "role": "Delivery System Manager",
+   "write": 1
+  }
+ ],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

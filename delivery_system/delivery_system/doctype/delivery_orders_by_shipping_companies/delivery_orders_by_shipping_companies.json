@@ -1,0 +1,671 @@
+{
+ "actions": [],
+ "autoname": "DO/SHP/.#",
+ "creation": "2020-05-20 13:13:49.263613",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "section_break_25",
+  "company",
+  "column_break_23",
+  "confirmed_by",
+  "address_and_contact_details_section",
+  "select_shipping_address",
+  "shipping_to",
+  "column_break_8",
+  "contact_person",
+  "contact_details",
+  "section_break_24",
+  "shipping_type",
+  "shipping_by",
+  "source",
+  "product_available",
+  "product_received",
+  "column_break_29",
+  "user",
+  "delivery_must_be_confirmed_by_shipping_source",
+  "section_break_2",
+  "customer",
+  "customer_name",
+  "customer_group",
+  "account_manager",
+  "shipping_address",
+  "territory",
+  "sub_territory",
+  "column_break_34",
+  "sales_order",
+  "order_review",
+  "processing",
+  "delivery_note",
+  "date",
+  "section_break_37",
+  "customer_notes",
+  "territory_group",
+  "set_source_warehouse",
+  "error",
+  "fix_error",
+  "column_break_6",
+  "order_review_status",
+  "delivery_status",
+  "return_shipping_date",
+  "delay_reason",
+  "rejection_reason",
+  "review_notes",
+  "processing_notes",
+  "delivery_car",
+  "car_drivers",
+  "section_break_62",
+  "items",
+  "billing_details",
+  "grand_total",
+  "shipping_fee",
+  "bank_fee",
+  "discount",
+  "column_break_78",
+  "total_after_discount",
+  "tax",
+  "total_after_tax",
+  "payment_details_section",
+  "shipping",
+  "multiple_payment_total",
+  "multiple_payment_outstanding",
+  "shipping_source_contact_details_section",
+  "mobile_number",
+  "mobile_number_backup",
+  "advance_payment_details_section",
+  "advance_customer_payment",
+  "multiple_payment_details_section",
+  "use_multiple_payment",
+  "multiple_payment",
+  "advance_adjustment_details_section",
+  "advance_amount_adjusted",
+  "advance_paid",
+  "column_break_89",
+  "modify_unpaid_amount",
+  "outstanding_amount",
+  "dc",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break",
+   "label": "Company Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "confirmed_by",
+   "fieldtype": "Link",
+   "label": "Confirmed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_24",
+   "fieldtype": "Section Break",
+   "label": "Shipping source"
+  },
+  {
+   "fieldname": "shipping_type",
+   "fieldtype": "Link",
+   "label": "Shipping Type",
+   "options": "Shipping Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_by",
+   "fieldtype": "Select",
+   "label": "Shipping By",
+   "options": "Shipping Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Source",
+   "options": "Shipping Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_29",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.user_name",
+   "fieldname": "account_manager",
+   "fieldtype": "Data",
+   "label": "Account Manager",
+   "read_only": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Read Only",
+   "hidden": 1,
+   "label": "Authorised User"
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "delivery_must_be_confirmed_by_shipping_source",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "Delivery Must Be Confirmed By Shipping Source",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break",
+   "label": "Order and Delivery Details"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer ID",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Customer Group",
+   "options": "Customer Group",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_address",
+   "fieldtype": "Small Text",
+   "label": "Shipping Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Territory",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_34",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "order_review",
+   "fieldtype": "Link",
+   "label": "Order Review",
+   "options": "Order Review",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Link",
+   "label": "Delivery Note",
+   "options": "Delivery Note",
+   "read_only": 1,
+   "unique": 1
+  },
+  {
+   "default": "Today",
+   "fieldname": "date",
+   "fieldtype": "Date",
+   "in_list_view": 1,
+   "label": "Delivery Date",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_37",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "customer_notes",
+   "fieldtype": "Small Text",
+   "label": "Customer Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "territory_group",
+   "fieldtype": "Link",
+   "label": "Territory Group",
+   "options": "Territory Group",
+   "read_only": 1
+  },
+  {
+   "fieldname": "set_source_warehouse",
+   "fieldtype": "Data",
+   "label": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "0",
+   "fieldname": "error",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Error",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.error;",
+   "fieldname": "fix_error",
+   "fieldtype": "Button",
+   "label": "Fix Error"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "order_review_status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "label": "Order Review Status",
+   "options": "\nConfirmed\nUnder Processing",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Delivery Status",
+   "options": "\nDraft\nDelayed\nCompleted\nRejected\nCancelled"
+  },
+  {
+   "depends_on": "eval:doc.delivery_status == 'Delayed'",
+   "fieldname": "return_shipping_date",
+   "fieldtype": "Date",
+   "label": "Return Shipping Date"
+  },
+  {
+   "depends_on": "eval:doc.delivery_status == 'Delayed'",
+   "fieldname": "delay_reason",
+   "fieldtype": "Small Text",
+   "label": "Delay Reason"
+  },
+  {
+   "depends_on": "eval:doc.delivery_status == 'Rejected'",
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason"
+  },
+  {
+   "fieldname": "review_notes",
+   "fieldtype": "Small Text",
+   "label": "Review Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "processing_notes",
+   "fieldtype": "Small Text",
+   "label": "Processing Notes",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_car",
+   "fieldtype": "Link",
+   "label": "Delivery Car",
+   "options": "Delivery Car",
+   "read_only": 1
+  },
+  {
+   "fieldname": "car_drivers",
+   "fieldtype": "Link",
+   "label": "Car Drivers",
+   "options": "Car Drivers",
+   "read_only": 1
+  },
+  {
+   "fieldname": "billing_details",
+   "fieldtype": "Section Break",
+   "label": "Billing Details"
+  },
+  {
+   "depends_on": "eval:doc.shipping_fee == 0;",
+   "fieldname": "shipping",
+   "fieldtype": "Data",
+   "label": "Shipping",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.shipping != \"Free Shipping\";",
+   "fieldname": "shipping_fee",
+   "fieldtype": "Currency",
+   "label": "Shipping Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bank_fee",
+   "fieldtype": "Currency",
+   "label": "Collection Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_paid",
+   "fieldtype": "Currency",
+   "label": "Advance Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "shipping_source_contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping Source Contact Details"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mobile_number_backup",
+   "fieldtype": "Data",
+   "label": "Mobile Number Backup",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_62",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Delivery Orders Item",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "dc",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "DC"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Delivery Orders By Shipping Companies",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "use_multiple_payment",
+   "fieldtype": "Check",
+   "label": "Use Multiple Payment"
+  },
+  {
+   "fieldname": "multiple_payment",
+   "fieldtype": "Table",
+   "options": "Multiple Payment",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.use_multiple_payment == 1;",
+   "fieldname": "multiple_payment_total",
+   "fieldtype": "Currency",
+   "label": "Multiple Payment Total",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "depends_on": "eval:doc.use_multiple_payment == 1;",
+   "fieldname": "multiple_payment_outstanding",
+   "fieldtype": "Currency",
+   "label": "Multiple Payment Outstanding",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.use_multiple_payment == 0;",
+   "fieldname": "payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_after_discount",
+   "fieldtype": "Currency",
+   "label": "Total After Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_78",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "label": "Tax",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_after_tax",
+   "fieldtype": "Currency",
+   "label": "Total After Tax",
+   "read_only": 1
+  },
+  {
+   "fieldname": "multiple_payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Multiple Payment Details"
+  },
+  {
+   "fieldname": "advance_payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Advance Payment Details"
+  },
+  {
+   "fieldname": "advance_customer_payment",
+   "fieldtype": "Table",
+   "options": "Advance Customer Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_adjustment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Advance Adjustment Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_amount_adjusted",
+   "fieldtype": "Currency",
+   "label": "Advance Amount Adjusted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_89",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sub_territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sub Territory",
+   "options": "Sub Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address_and_contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact Details"
+  },
+  {
+   "fieldname": "select_shipping_address",
+   "fieldtype": "Link",
+   "label": "Shipping To",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_to",
+   "fieldtype": "Small Text",
+   "label": "Shipping Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_8",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact_details",
+   "fieldtype": "Small Text",
+   "label": "Contact Details",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "modify_unpaid_amount",
+   "fieldtype": "Currency",
+   "label": "Unpaid Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "product_received",
+   "fieldtype": "Check",
+   "label": "Product Received",
+   "read_only": 1
+  },
+  {
+   "fieldname": "processing",
+   "fieldtype": "Link",
+   "label": "Processing",
+   "options": "Processing",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "product_available",
+   "fieldtype": "Check",
+   "label": "Ready",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-04-18 19:17:58.919647",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Delivery Orders By Shipping Companies",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery Source Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Delivery Source Review"
+  },
+  {
+   "read": 1,
+   "role": "Delivery Source Confirm",
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery Returns Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "customer_name",
+ "track_changes": 1
+}

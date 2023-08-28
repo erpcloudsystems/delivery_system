@@ -1,0 +1,37 @@
+{
+ "creation": "2019-09-23 11:52:47.154113",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "default",
+  "territory"
+ ],
+ "fields": [
+  {
+   "columns": 1,
+   "default": "0",
+   "fieldname": "default",
+   "fieldtype": "Check",
+   "in_list_view": 1,
+   "label": "Default"
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Territory",
+   "options": "Territory"
+  }
+ ],
+ "istable": 1,
+ "modified": "2019-09-23 11:52:47.154113",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Driver Territory",
+ "owner": "Administrator",
+ "permissions": [],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

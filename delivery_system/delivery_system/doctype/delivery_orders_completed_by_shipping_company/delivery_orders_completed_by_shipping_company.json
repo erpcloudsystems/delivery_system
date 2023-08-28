@@ -1,0 +1,342 @@
+{
+ "actions": [],
+ "autoname": "SHP-DO-COM/.#",
+ "creation": "2019-07-31 08:45:10.003845",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "address_and_contact_details_section",
+  "select_shipping_address",
+  "shipping_to",
+  "column_break_5",
+  "contact_person",
+  "contact_details",
+  "order_and_delivery_details_section",
+  "sales_order",
+  "delivery_note",
+  "delivery_orders",
+  "column_break_6",
+  "customer",
+  "customer_name",
+  "account_manager",
+  "territory",
+  "sub_territory",
+  "shipping_source_section",
+  "shipping_type",
+  "shipping_by",
+  "source",
+  "set_warehouse",
+  "column_break_15",
+  "goods_received_date",
+  "order_review",
+  "order_review_status",
+  "delivery_status",
+  "billing_details",
+  "grand_total",
+  "shipping_fee",
+  "shipping",
+  "advance_payment_details_section",
+  "advance_customer_payment",
+  "multiple_payment_details_section",
+  "multiple_payment",
+  "advance_adjustment_details_section",
+  "advance_amount_adjusted",
+  "advance_paid",
+  "column_break_31",
+  "outstanding_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_note",
+   "fieldtype": "Link",
+   "label": "Delivery Note",
+   "options": "Delivery Note",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Customer ID",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Territory",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_type",
+   "fieldtype": "Link",
+   "label": "Shipping Type",
+   "options": "Shipping Type",
+   "read_only": 1
+  },
+  {
+   "default": "Shipping Company",
+   "fieldname": "shipping_by",
+   "fieldtype": "Select",
+   "label": "Shipping By",
+   "options": "Shipping Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "source",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Source",
+   "options": "Shipping Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "order_review",
+   "fieldtype": "Link",
+   "label": "Order Review",
+   "options": "Order Review",
+   "read_only": 1
+  },
+  {
+   "default": "Confirmed",
+   "fieldname": "order_review_status",
+   "fieldtype": "Select",
+   "label": "Order Review Status",
+   "options": "\nConfirmed\nUnder Processing",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_status",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Delivery Status",
+   "options": "\nCompleted\nRejected",
+   "read_only": 1
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Delivery Orders Completed By Shipping Company",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_orders",
+   "fieldtype": "Data",
+   "label": "Delivery Orders By Shipping Companies",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_fee",
+   "fieldtype": "Currency",
+   "label": "Shipping Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "billing_details",
+   "fieldtype": "Section Break",
+   "label": "Billing Details"
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Grand Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "set_warehouse",
+   "fieldtype": "Data",
+   "label": "Set Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping",
+   "fieldtype": "Data",
+   "label": "Shipping",
+   "read_only": 1
+  },
+  {
+   "fieldname": "goods_received_date",
+   "fieldtype": "Date",
+   "label": "Goods Received Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shipping_source_section",
+   "fieldtype": "Section Break",
+   "label": "Shipping source"
+  },
+  {
+   "fieldname": "order_and_delivery_details_section",
+   "fieldtype": "Section Break",
+   "label": "Order and Delivery Details"
+  },
+  {
+   "fieldname": "column_break_6",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "account_manager",
+   "fieldtype": "Data",
+   "label": "Account Manager",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Advance Payment Details"
+  },
+  {
+   "fieldname": "advance_customer_payment",
+   "fieldtype": "Table",
+   "options": "Advance Customer Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "multiple_payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Multiple Payment Details"
+  },
+  {
+   "fieldname": "multiple_payment",
+   "fieldtype": "Table",
+   "options": "Multiple Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_adjustment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Advance Adjustment Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_amount_adjusted",
+   "fieldtype": "Currency",
+   "label": "Advance Amount Adjusted",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_paid",
+   "fieldtype": "Currency",
+   "label": "Advance Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "column_break_15",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sub_territory",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Sub Territory",
+   "options": "Sub Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address_and_contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Address and Contact Details"
+  },
+  {
+   "fieldname": "select_shipping_address",
+   "fieldtype": "Link",
+   "label": "Shipping To",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_to",
+   "fieldtype": "Small Text",
+   "label": "Shipping Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Contact",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact_details",
+   "fieldtype": "Small Text",
+   "label": "Contact Details",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2021-12-14 17:55:16.423696",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Delivery Orders Completed By Shipping Company",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "customer_name",
+ "track_changes": 1
+}

@@ -1,0 +1,229 @@
+{
+ "actions": [],
+ "autoname": "field:delegate_name",
+ "creation": "2019-07-23 10:41:38.250635",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "order_details",
+  "shipment_details",
+  "billing_details",
+  "unallocated_orders",
+  "section_break_5",
+  "enabled",
+  "column_break_7",
+  "allow_split_payment",
+  "section_break_9",
+  "company",
+  "warehouse",
+  "currency",
+  "symbol",
+  "delegate_name",
+  "employee",
+  "column_break_13",
+  "user",
+  "email",
+  "delivery_commission",
+  "collection_commission",
+  "contact_details_section",
+  "mobile_number",
+  "mobile_number_backup",
+  "territory_section",
+  "delegate_territory",
+  "user_permission"
+ ],
+ "fields": [
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Employee",
+   "options": "Employee",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Account Manager",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "territory_section",
+   "fieldtype": "Section Break",
+   "label": "Territory"
+  },
+  {
+   "fieldname": "delegate_territory",
+   "fieldtype": "Table",
+   "label": "Delegate Territory",
+   "options": "Delegate Territory"
+  },
+  {
+   "fieldname": "delegate_name",
+   "fieldtype": "Data",
+   "label": "Delegate Name",
+   "unique": 1
+  },
+  {
+   "fieldname": "billing_details",
+   "fieldtype": "HTML",
+   "label": "Billing Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fetch_from": "company.default_currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1,
+   "remember_last_selected_value": 1
+  },
+  {
+   "fetch_from": "currency.symbol",
+   "fieldname": "symbol",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Symbol"
+  },
+  {
+   "fieldname": "shipment_details",
+   "fieldtype": "HTML",
+   "label": "Shipment Details"
+  },
+  {
+   "fieldname": "order_details",
+   "fieldtype": "HTML",
+   "label": "Order Details"
+  },
+  {
+   "fieldname": "unallocated_orders",
+   "fieldtype": "HTML",
+   "label": "Unallocated Orders"
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "mobile_number_backup",
+   "fieldtype": "Data",
+   "label": "Mobile Number Backup"
+  },
+  {
+   "default": "0",
+   "fieldname": "user_permission",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "User Permission",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "delivery_commission",
+   "fieldtype": "Currency",
+   "label": "Delivery Commission"
+  },
+  {
+   "fieldname": "collection_commission",
+   "fieldtype": "Currency",
+   "label": "Commission For Delivery & Collection"
+  },
+  {
+   "fetch_from": "user.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "email"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_split_payment",
+   "fieldtype": "Check",
+   "label": "Allow Split Payment"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_13",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "links": [],
+ "modified": "2022-01-11 22:00:13.514134",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Delegate",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Delivery Processing"
+  },
+  {
+   "read": 1,
+   "role": "Delivery Source Manager"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Delivery Sales Manager"
+  }
+ ],
+ "search_fields": "warehouse",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "delegate_name",
+ "track_changes": 1
+}

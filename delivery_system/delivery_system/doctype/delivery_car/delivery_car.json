@@ -1,0 +1,109 @@
+{
+ "allow_rename": 1,
+ "autoname": "field:car_name",
+ "creation": "2019-09-23 11:32:03.412929",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "company",
+  "car_name",
+  "type_of_car",
+  "car_model",
+  "chassis_number",
+  "licence_number",
+  "licence_expiry_date",
+  "car_commission",
+  "section_break_7",
+  "car_territory"
+ ],
+ "fields": [
+  {
+   "fieldname": "car_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Car Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "type_of_car",
+   "fieldtype": "Data",
+   "label": "Type Of Car"
+  },
+  {
+   "fieldname": "car_model",
+   "fieldtype": "Data",
+   "label": "Car Model"
+  },
+  {
+   "fieldname": "chassis_number",
+   "fieldtype": "Data",
+   "label": "Chassis Number"
+  },
+  {
+   "fieldname": "licence_number",
+   "fieldtype": "Data",
+   "label": "Licence Number"
+  },
+  {
+   "fieldname": "licence_expiry_date",
+   "fieldtype": "Date",
+   "label": "Licence Expiry Date"
+  },
+  {
+   "fieldname": "section_break_7",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "car_territory",
+   "fieldtype": "Table",
+   "label": "Car Territory",
+   "options": "Car Territory"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "car_commission",
+   "fieldtype": "Currency",
+   "label": "Car Commission"
+  }
+ ],
+ "modified": "2020-05-05 10:49:24.728449",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Delivery Car",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Delivery Processing"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

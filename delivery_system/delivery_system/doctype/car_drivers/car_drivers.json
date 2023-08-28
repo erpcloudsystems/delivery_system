@@ -1,0 +1,98 @@
+{
+ "allow_rename": 1,
+ "autoname": "field:driver_name",
+ "creation": "2019-09-23 11:50:29.350292",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "company",
+  "driver_name",
+  "employee",
+  "licence_number",
+  "licence_expiry_date",
+  "driver_commission",
+  "section_break_6",
+  "driver_territory"
+ ],
+ "fields": [
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "fieldname": "driver_name",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Driver Name",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "employee",
+   "fieldtype": "Link",
+   "label": "Employee",
+   "options": "Employee"
+  },
+  {
+   "fieldname": "licence_number",
+   "fieldtype": "Data",
+   "label": "Licence Number"
+  },
+  {
+   "fieldname": "licence_expiry_date",
+   "fieldtype": "Date",
+   "label": "Licence Expiry Date"
+  },
+  {
+   "fieldname": "section_break_6",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "driver_territory",
+   "fieldtype": "Table",
+   "label": "Driver Territory",
+   "options": "Driver Territory"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "driver_commission",
+   "fieldtype": "Currency",
+   "label": "Driver Commission"
+  }
+ ],
+ "modified": "2020-05-05 10:49:35.249985",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Car Drivers",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Delivery Processing"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery System Manager",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

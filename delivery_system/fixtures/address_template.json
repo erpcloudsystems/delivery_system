@@ -1,0 +1,14 @@
+[
+ {
+  "country": "Egypt",
+  "docstatus": 0,
+  "doctype": "Address Template",
+  "is_default": 1,
+  "modified": "2021-12-03 20:10:44.836699",
+  "name": "Egypt",
+  "parent": null,
+  "parentfield": null,
+  "parenttype": null,
+  "template": "<b>Address :</b> {{ address or \"\" }} <br>\n<b>City/Town :</b> {{ citytown or \"\" }} <br>\n<b>Street :</b> {{ street or \"\" }} <br>\n<b>Country :</b> {{ country or \"\" }} <br>\n<b>Postal Code :</b> {{ postal_code or \"\" }} <br>\n<b>House Number :</b> {{ house_number or \"\" }} <br>\n<b>Apartment Number :</b> {{ apartment_number or \"\" }} <br>\n<b>Floor :</b> {{ floor or \"\" }} <br>\n<b>Way to Climb :</b> {{ way_to_climb or \"\" }} <br>\n<b>Special Marque :</b> {{ special_marque or \"\" }} <br>"
+ }
+]

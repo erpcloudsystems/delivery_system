@@ -1,0 +1,218 @@
+{
+ "actions": [],
+ "autoname": "PRO-MAT-.####",
+ "creation": "2021-11-12 21:45:56.712066",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "material_transfer_notes",
+  "btransfer_informationb_section",
+  "material_transfer_type",
+  "shipping_by",
+  "shipping_source",
+  "delivery_car",
+  "car_drivers",
+  "get_updated_records",
+  "column_break_4",
+  "company",
+  "posting_date",
+  "posting_time",
+  "territory",
+  "sub_territory",
+  "bwarehouse_informationb_section",
+  "default_source_warehouse",
+  "column_break_11",
+  "default_target_warehouse",
+  "section_break_13",
+  "skip_transfer",
+  "material_transfer_table",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "default": "Material Transfer",
+   "fieldname": "material_transfer_type",
+   "fieldtype": "Link",
+   "label": "Material Transfer Type",
+   "options": "Stock Entry Type",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "shipping_by",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Shipping By",
+   "options": "\nShipping Company\nDelegate"
+  },
+  {
+   "fieldname": "shipping_source",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Shipping Source",
+   "options": "shipping_by"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Material Transfer",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_4",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "posting_date",
+   "fieldtype": "Date",
+   "label": "Posting Date",
+   "reqd": 1
+  },
+  {
+   "default": "Now",
+   "fieldname": "posting_time",
+   "fieldtype": "Time",
+   "label": "Posting Time",
+   "reqd": 1
+  },
+  {
+   "fieldname": "btransfer_informationb_section",
+   "fieldtype": "Section Break",
+   "label": "<b>Transfer Information</b>"
+  },
+  {
+   "fieldname": "bwarehouse_informationb_section",
+   "fieldtype": "Section Break",
+   "label": "<b>Warehouse Information</b>"
+  },
+  {
+   "fieldname": "default_source_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Source Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "default_target_warehouse",
+   "fieldtype": "Link",
+   "label": "Default Target Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_13",
+   "fieldtype": "Section Break",
+   "label": "<b>Processing Orders</b>"
+  },
+  {
+   "fieldname": "material_transfer_table",
+   "fieldtype": "Table",
+   "options": "Material Transfer Table",
+   "read_only": 1
+  },
+  {
+   "fieldname": "get_updated_records",
+   "fieldtype": "Button",
+   "label": "Get Updated Records"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Territory",
+   "options": "Territory",
+   "reqd": 1
+  },
+  {
+   "fieldname": "sub_territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sub Territory",
+   "options": "Sub Territory"
+  },
+  {
+   "default": "0",
+   "description": "<b>Using this will ignore material transfer for processing which has Insufficient stock.</b>",
+   "fieldname": "skip_transfer",
+   "fieldtype": "Check",
+   "label": "Skip Transfer"
+  },
+  {
+   "fieldname": "material_transfer_notes",
+   "fieldtype": "HTML",
+   "label": "Material Transfer Notes",
+   "options": "<table class=\"table table-bordered\" style=\"background-color: #f9f9f9;\">\n<tbody><tr>\n<td><h4>\n<i class=\"fa fa-hand-right\"></i>Notes</h4>\n    <ul>\n\t<li>Source Warehouse and Target Warehouse Can Not Be the Same.</li>\n        <li>In between automatic transfer process of stock from source warehouse to target warehouse, there are chances that system failed to transfer stock fully as in between transition we may face insufficient stock error.</li>\n        <li>In this case, Processing will not marked as <span style=\"color: orange;\"><b>Source Received</b></span> and it will be in <span style=\"color: green;\"><b>Processed</b></span> stage.</li>\n</ul>\n</td>\n</tr>\n</tbody></table>"
+  },
+  {
+   "fieldname": "delivery_car",
+   "fieldtype": "Link",
+   "label": "Delivery Car",
+   "options": "Delivery Car"
+  },
+  {
+   "fieldname": "car_drivers",
+   "fieldtype": "Link",
+   "label": "Car Drivers",
+   "options": "Car Drivers"
+  }
+ ],
+ "index_web_pages_for_search": 1,
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-04-17 20:23:39.203324",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Material Transfer",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock User",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Stock Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "shipping_source",
+ "track_changes": 1
+}

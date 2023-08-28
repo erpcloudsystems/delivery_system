@@ -1,0 +1,389 @@
+{
+ "actions": [],
+ "autoname": "RTN-ORD-.###",
+ "creation": "2020-05-08 10:44:45.738879",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "customer",
+  "customer_name",
+  "account_manager",
+  "sales_invoice",
+  "sales_order",
+  "shipping_type",
+  "territory",
+  "sub_territory",
+  "column_break_5",
+  "company",
+  "not_eligible",
+  "goods_received_date",
+  "return_posting_date",
+  "return_reason",
+  "section_break_8",
+  "shipping_by",
+  "shipping_source",
+  "delivery_car",
+  "car_drivers",
+  "column_break_11",
+  "return_by",
+  "return_source",
+  "return_warehouse",
+  "section_break_14",
+  "items",
+  "section_break_18",
+  "taxes_and_charges",
+  "taxes",
+  "section_break_22",
+  "grand_total",
+  "shipping_fee",
+  "bank_fee",
+  "discount",
+  "column_break_31",
+  "total_after_discount",
+  "tax",
+  "total_after_tax",
+  "status",
+  "advance_payment_details_section",
+  "advance_customer_payment",
+  "advance_adjustment_details_section",
+  "advance_amount_adjusted",
+  "advance_paid",
+  "column_break_39",
+  "outstanding_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Customer",
+   "options": "Customer",
+   "reqd": 1
+  },
+  {
+   "fieldname": "shipping_type",
+   "fieldtype": "Link",
+   "label": "Shipping Type",
+   "options": "Shipping Type",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "Today",
+   "fieldname": "return_posting_date",
+   "fieldtype": "Date",
+   "label": "Return Posting Date",
+   "reqd": 1
+  },
+  {
+   "fieldname": "section_break_8",
+   "fieldtype": "Section Break",
+   "label": "Source & Return Delivery Details"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Return Order",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_by",
+   "fieldtype": "Select",
+   "label": "Shipping By",
+   "options": "\nShipping Company\nDelegate",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_source",
+   "fieldtype": "Dynamic Link",
+   "label": "Shipping Source",
+   "options": "shipping_by",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_11",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "delivery_car",
+   "fieldtype": "Link",
+   "label": "Delivery Car",
+   "options": "Delivery Car"
+  },
+  {
+   "fieldname": "car_drivers",
+   "fieldtype": "Link",
+   "label": "Car Drivers",
+   "options": "Car Drivers"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "return_reason",
+   "fieldtype": "Select",
+   "label": "Return Reason",
+   "options": "\nIncorrect Product or Size Ordered\nProduct No Longer Needed\nProduct Does Not Match Description on Website or in Catalogue\nProduct Did Not Meet Customer's Expectations\nCompany Shipped Wrong Product or Size\nCustomer Unfamiliar with Product\nCustomer Unfamiliar with Retail Interface",
+   "reqd": 1
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Items",
+   "options": "Return Order Items"
+  },
+  {
+   "fieldname": "section_break_18",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "taxes",
+   "fieldtype": "Table",
+   "label": "Sales Taxes and Charges",
+   "options": "Sales Taxes and Charges",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_22",
+   "fieldtype": "Section Break",
+   "label": "Billing Details"
+  },
+  {
+   "fieldname": "taxes_and_charges",
+   "fieldtype": "Link",
+   "label": "Sales Taxes and Charges Template",
+   "options": "Sales Taxes and Charges Template",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Company",
+   "options": "Company",
+   "remember_last_selected_value": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "sales_invoice",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Sales Invoice",
+   "options": "Sales Invoice",
+   "reqd": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "default": "In Return Processing",
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "hidden": 1,
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nIn Return Processing\nStock Received\nPayment Adjusted\nCompleted\nRejected"
+  },
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "goods_received_date",
+   "fieldtype": "Date",
+   "label": "Goods Received Date",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.user_name",
+   "fieldname": "account_manager",
+   "fieldtype": "Data",
+   "label": "Account Manager",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "shipping_fee",
+   "fieldtype": "Currency",
+   "label": "Shipping Fee",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "bank_fee",
+   "fieldtype": "Currency",
+   "label": "Collection Fee",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_after_discount",
+   "fieldtype": "Currency",
+   "label": "Total After Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_31",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "label": "Tax",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_after_tax",
+   "fieldtype": "Currency",
+   "label": "Total After Tax",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_paid",
+   "fieldtype": "Currency",
+   "label": "Advance Paid",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "advance_customer_payment",
+   "fieldtype": "Table",
+   "options": "Paid Amount Details",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_adjustment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Advance Adjustment Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_amount_adjusted",
+   "fieldtype": "Currency",
+   "label": "Advance Amount Adjusted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_39",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "return_by",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Return By",
+   "options": "\nShipping Company\nDelegate",
+   "reqd": 1
+  },
+  {
+   "fieldname": "return_source",
+   "fieldtype": "Dynamic Link",
+   "in_list_view": 1,
+   "label": "Return Source",
+   "options": "return_by",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "return_source.warehouse",
+   "fieldname": "return_warehouse",
+   "fieldtype": "Link",
+   "label": "Return to Warehouse",
+   "options": "Warehouse",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "description": "<b>Delivery may not completed or return days validity expired</b>",
+   "fieldname": "not_eligible",
+   "fieldtype": "Check",
+   "label": "Not Eligible",
+   "read_only": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "label": "Territory",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sub_territory",
+   "fieldtype": "Link",
+   "label": "Sub Territory",
+   "options": "Sub Territory",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "customer.customer_name",
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-04-18 15:22:37.509006",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Return Order",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "customer_name",
+ "track_changes": 1
+}

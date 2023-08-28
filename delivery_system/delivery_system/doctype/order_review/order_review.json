@@ -1,0 +1,694 @@
+{
+ "actions": [],
+ "autoname": "OR.#",
+ "creation": "2019-07-23 11:56:28.808229",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "company",
+  "column_break_23",
+  "confirmed_by",
+  "customer_rating_section",
+  "total_orders",
+  "total_successful_orders",
+  "total_failed_orders",
+  "total_pending_order",
+  "column_break_5",
+  "last_order_before",
+  "successful_orders",
+  "failed_orders",
+  "pending_order",
+  "contact_details_and_address_section",
+  "contact_person",
+  "contact",
+  "preferred_method_of_communication",
+  "phone",
+  "column_break_22",
+  "mobile_no",
+  "mobile_no_1",
+  "watsapp",
+  "telegram",
+  "modify_contact",
+  "section_break_35",
+  "select_shipping_address",
+  "address",
+  "citytown",
+  "street",
+  "country",
+  "column_break_30",
+  "territory_group",
+  "territory",
+  "sub_territory",
+  "postal_code",
+  "house_number",
+  "column_break_33",
+  "apartment_number",
+  "floor",
+  "way_to_climb",
+  "number_of_stairs",
+  "special_marque",
+  "modify_address",
+  "section_break_25",
+  "sales_order",
+  "delivery_date",
+  "customer",
+  "customer_name",
+  "new_customer_name",
+  "customer_group",
+  "account_manager",
+  "customer_notes",
+  "column_break_42",
+  "order_type",
+  "shipping_type",
+  "invoice_value_for_free_shipping",
+  "status",
+  "hold_reason",
+  "continue_hold_order",
+  "rejection_reason",
+  "review_notes",
+  "section_break_50",
+  "items",
+  "section_break_65",
+  "grand_total",
+  "shipping_fee",
+  "advance_amount_adjusted",
+  "outstanding_amount",
+  "column_break_71",
+  "bank_fee",
+  "discount",
+  "total_after_discount",
+  "tax",
+  "total_after_tax",
+  "advance_payment_details",
+  "advance_customer_payment",
+  "multiple_payment_details_section",
+  "multiple_payment",
+  "section_break_14",
+  "shipping",
+  "shipping_account",
+  "advance_adjustment_details_section",
+  "advance_paid",
+  "column_break_85",
+  "unpaid_amount",
+  "amended_from"
+ ],
+ "fields": [
+  {
+   "fieldname": "sales_order",
+   "fieldtype": "Link",
+   "label": "Sales Order",
+   "options": "Sales Order",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "order_type",
+   "fieldtype": "Select",
+   "label": "Order Type",
+   "options": "Shopping Cart",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_type",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Shipping Type",
+   "options": "Shipping Type"
+  },
+  {
+   "fieldname": "status",
+   "fieldtype": "Select",
+   "in_standard_filter": 1,
+   "label": "Status",
+   "options": "\nDraft\nConfirmed\nRejected\nCancelled\nReleased"
+  },
+  {
+   "fieldname": "amended_from",
+   "fieldtype": "Link",
+   "label": "Amended From",
+   "no_copy": 1,
+   "options": "Order Review",
+   "print_hide": 1,
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status == 'Rejected'",
+   "fieldname": "rejection_reason",
+   "fieldtype": "Small Text",
+   "label": "Rejection Reason"
+  },
+  {
+   "fieldname": "customer",
+   "fieldtype": "Link",
+   "in_standard_filter": 1,
+   "label": "Customer ID",
+   "options": "Customer",
+   "read_only": 1
+  },
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Territory",
+   "options": "Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "delivery_date",
+   "fieldtype": "Date",
+   "label": "Delivery Date"
+  },
+  {
+   "fieldname": "section_break_14",
+   "fieldtype": "Section Break",
+   "hidden": 1,
+   "label": "Payment Details"
+  },
+  {
+   "fieldname": "items",
+   "fieldtype": "Table",
+   "label": "Order Review Table",
+   "options": "Order Review Table",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_fee",
+   "fieldtype": "Currency",
+   "label": "Shipping Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "grand_total",
+   "fieldtype": "Currency",
+   "label": "Total",
+   "read_only": 1
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_group",
+   "fieldtype": "Link",
+   "label": "Customer Group",
+   "options": "Customer Group",
+   "read_only": 1
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "contact_details_and_address_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "preferred_method_of_communication",
+   "fieldtype": "Select",
+   "label": "Preferred Method Of Communication",
+   "options": "\nVisit\nCall\nSMS\nMail",
+   "read_only": 1
+  },
+  {
+   "fieldname": "phone",
+   "fieldtype": "Data",
+   "label": "Phone",
+   "read_only": 1
+  },
+  {
+   "fieldname": "mobile_no",
+   "fieldtype": "Data",
+   "label": "Mobile No",
+   "read_only": 1,
+   "reqd": 1
+  },
+  {
+   "fieldname": "watsapp",
+   "fieldtype": "Data",
+   "label": "Watsapp",
+   "read_only": 1
+  },
+  {
+   "fieldname": "telegram",
+   "fieldtype": "Data",
+   "label": "Telegram",
+   "read_only": 1
+  },
+  {
+   "fieldname": "address",
+   "fieldtype": "Data",
+   "label": "Address Line 1",
+   "read_only": 1
+  },
+  {
+   "fieldname": "citytown",
+   "fieldtype": "Data",
+   "label": "City/Town",
+   "read_only": 1
+  },
+  {
+   "fieldname": "street",
+   "fieldtype": "Data",
+   "label": "Street",
+   "read_only": 1
+  },
+  {
+   "fieldname": "country",
+   "fieldtype": "Link",
+   "label": "Country",
+   "options": "Country",
+   "read_only": 1
+  },
+  {
+   "fieldname": "postal_code",
+   "fieldtype": "Data",
+   "label": "Postal Code",
+   "read_only": 1
+  },
+  {
+   "fieldname": "house_number",
+   "fieldtype": "Data",
+   "label": "House Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "apartment_number",
+   "fieldtype": "Data",
+   "label": "Apartment Number",
+   "read_only": 1
+  },
+  {
+   "fieldname": "floor",
+   "fieldtype": "Data",
+   "label": "Floor",
+   "read_only": 1
+  },
+  {
+   "fieldname": "way_to_climb",
+   "fieldtype": "Select",
+   "label": "Way to Climb",
+   "options": "\nStairs\nElevator",
+   "read_only": 1
+  },
+  {
+   "fieldname": "special_marque",
+   "fieldtype": "Data",
+   "label": "Special Marque",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_23",
+   "fieldtype": "Column Break"
+  },
+  {
+   "allow_on_submit": 1,
+   "fieldname": "confirmed_by",
+   "fieldtype": "Link",
+   "label": "Confirmed By",
+   "options": "User",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_25",
+   "fieldtype": "Section Break",
+   "label": "Order and Delivery Details"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "customer_rating_section",
+   "fieldtype": "Section Break",
+   "label": "Customer Rating"
+  },
+  {
+   "fieldname": "total_orders",
+   "fieldtype": "Int",
+   "label": "Total Orders",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_successful_orders",
+   "fieldtype": "Int",
+   "label": "Total Successful Orders",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_failed_orders",
+   "fieldtype": "Int",
+   "label": "Total Failed Orders",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_5",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "last_order_before",
+   "fieldtype": "Data",
+   "label": "Last Order Before (Days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "total_pending_order",
+   "fieldtype": "Int",
+   "label": "Total Pending Order",
+   "read_only": 1
+  },
+  {
+   "fieldname": "successful_orders",
+   "fieldtype": "Int",
+   "label": "Successful Orders (Last 30 Days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "failed_orders",
+   "fieldtype": "Int",
+   "label": "Failed Orders (Last 30 Days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "pending_order",
+   "fieldtype": "Int",
+   "label": "Pending Order (Last 30 Days)",
+   "read_only": 1
+  },
+  {
+   "fieldname": "customer_notes",
+   "fieldtype": "Text",
+   "label": "Customer Notes",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.status == 'Confirmed';",
+   "fieldname": "review_notes",
+   "fieldtype": "Small Text",
+   "label": "Review Notes"
+  },
+  {
+   "fetch_from": "territory.parent_territory",
+   "fieldname": "territory_group",
+   "fieldtype": "Link",
+   "label": "Territory Group",
+   "options": "Territory Group",
+   "read_only": 1
+  },
+  {
+   "depends_on": "eval:doc.shipping_fee == 0;",
+   "fieldname": "shipping",
+   "fieldtype": "Data",
+   "label": "Shipping",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_paid",
+   "fieldtype": "Currency",
+   "label": "Advance Paid",
+   "read_only": 1
+  },
+  {
+   "fieldname": "bank_fee",
+   "fieldtype": "Currency",
+   "label": "Collection Fee",
+   "read_only": 1
+  },
+  {
+   "fieldname": "section_break_50",
+   "fieldtype": "Section Break",
+   "label": "Item Details"
+  },
+  {
+   "fieldname": "column_break_42",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "account_manager",
+   "fieldtype": "Data",
+   "label": "Account Manager",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "shipping_type.invoice_value_for_free_shipping",
+   "fieldname": "invoice_value_for_free_shipping",
+   "fieldtype": "Currency",
+   "label": "Invoice Value For Free Shipping",
+   "read_only": 1
+  },
+  {
+   "fieldname": "shipping_account",
+   "fieldtype": "Link",
+   "label": "Shipping Account",
+   "options": "Account",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Contact"
+  },
+  {
+   "collapsible": 1,
+   "fieldname": "section_break_35",
+   "fieldtype": "Section Break",
+   "label": " Address Details"
+  },
+  {
+   "fieldname": "select_shipping_address",
+   "fieldtype": "Link",
+   "label": "Shipping Address",
+   "options": "Address",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_33",
+   "fieldtype": "Column Break"
+  },
+  {
+   "depends_on": "eval:doc.way_to_climb == 'Stairs';",
+   "fieldname": "number_of_stairs",
+   "fieldtype": "Data",
+   "label": "Number of Stairs",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_22",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "modify_contact",
+   "fieldtype": "Check",
+   "label": "Modify Contact"
+  },
+  {
+   "default": "0",
+   "fieldname": "modify_address",
+   "fieldtype": "Check",
+   "label": "Modify Address"
+  },
+  {
+   "fieldname": "new_customer_name",
+   "fieldtype": "Data",
+   "label": "New Customer Name"
+  },
+  {
+   "fieldname": "section_break_65",
+   "fieldtype": "Section Break",
+   "label": "Billing Details"
+  },
+  {
+   "default": "0",
+   "fieldname": "discount",
+   "fieldtype": "Currency",
+   "label": "Discount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "advance_amount_adjusted",
+   "fieldtype": "Currency",
+   "label": "Advance Amount Adjusted",
+   "read_only": 1
+  },
+  {
+   "fieldname": "outstanding_amount",
+   "fieldtype": "Currency",
+   "label": "Outstanding Amount",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_after_discount",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total After Discount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_71",
+   "fieldtype": "Column Break"
+  },
+  {
+   "default": "0",
+   "fieldname": "tax",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Tax",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "total_after_tax",
+   "fieldtype": "Currency",
+   "hidden": 1,
+   "label": "Total After Tax",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_payment_details",
+   "fieldtype": "Section Break",
+   "label": "Advance Payment Details"
+  },
+  {
+   "fieldname": "advance_customer_payment",
+   "fieldtype": "Table",
+   "options": "Advance Customer Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "multiple_payment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Multiple Payment Details"
+  },
+  {
+   "fieldname": "multiple_payment",
+   "fieldtype": "Table",
+   "options": "Multiple Payment",
+   "read_only": 1
+  },
+  {
+   "fieldname": "advance_adjustment_details_section",
+   "fieldtype": "Section Break",
+   "label": "Advance Adjustment Details"
+  },
+  {
+   "fieldname": "column_break_85",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "customer_name",
+   "fieldtype": "Data",
+   "label": "Customer Name",
+   "read_only": 1
+  },
+  {
+   "fieldname": "sub_territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "in_standard_filter": 1,
+   "label": "Sub Territory",
+   "options": "Sub Territory",
+   "read_only": 1
+  },
+  {
+   "fieldname": "contact_person",
+   "fieldtype": "Link",
+   "label": "Contact Person",
+   "options": "Contact",
+   "read_only": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "unpaid_amount",
+   "fieldtype": "Currency",
+   "label": "Unpaid Amount",
+   "read_only": 1
+  },
+  {
+   "fieldname": "column_break_30",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "mobile_no_1",
+   "fieldtype": "Data",
+   "label": "Emergency Mobile No",
+   "read_only": 1
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.status == 'Hold';",
+   "fieldname": "hold_reason",
+   "fieldtype": "Small Text",
+   "label": "Hold Reason",
+   "mandatory_depends_on": "eval:doc.status == 'Hold';"
+  },
+  {
+   "allow_on_submit": 1,
+   "depends_on": "eval:doc.status == 'Hold';",
+   "fieldname": "continue_hold_order",
+   "fieldtype": "Button",
+   "label": "Continue Hold Order"
+  }
+ ],
+ "is_submittable": 1,
+ "links": [],
+ "modified": "2022-11-24 16:10:51.743376",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Order Review",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery Review",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Delivery Processing"
+  },
+  {
+   "amend": 1,
+   "cancel": 1,
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery System Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  },
+  {
+   "cancel": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery Returns Manager",
+   "share": 1,
+   "submit": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "customer_name",
+ "track_changes": 1
+}

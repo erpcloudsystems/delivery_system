@@ -1,0 +1,222 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "field:shipping_company",
+ "creation": "2019-07-23 10:33:33.272816",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "order_details",
+  "shipment_details",
+  "billing_details",
+  "unallocated_orders",
+  "section_break_5",
+  "enabled",
+  "column_break_7",
+  "allow_split_payment",
+  "section_break_9",
+  "company",
+  "currency",
+  "symbol",
+  "shipping_company",
+  "company_type",
+  "warehouse",
+  "column_break_16",
+  "user",
+  "email",
+  "delivery_commission",
+  "collection_commission",
+  "delivery_period",
+  "contact_details_section",
+  "mobile_number",
+  "mobile_number_backup",
+  "user_permission"
+ ],
+ "fields": [
+  {
+   "fieldname": "shipping_company",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shipping Company",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "fieldname": "company_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Company Type",
+   "options": "Local\nInternational",
+   "reqd": 1
+  },
+  {
+   "fieldname": "delivery_period",
+   "fieldtype": "Int",
+   "label": "Delivery Period"
+  },
+  {
+   "fieldname": "billing_details",
+   "fieldtype": "HTML",
+   "label": "Billing Details"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company",
+   "reqd": 1
+  },
+  {
+   "fetch_from": "company.default_currency",
+   "fieldname": "currency",
+   "fieldtype": "Link",
+   "hidden": 1,
+   "label": "Currency",
+   "options": "Currency",
+   "read_only": 1
+  },
+  {
+   "fetch_from": "currency.symbol",
+   "fieldname": "symbol",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "Symbol",
+   "read_only": 1
+  },
+  {
+   "fieldname": "order_details",
+   "fieldtype": "HTML",
+   "label": "Order Details"
+  },
+  {
+   "fieldname": "shipment_details",
+   "fieldtype": "HTML",
+   "label": "Shipment Details"
+  },
+  {
+   "fieldname": "unallocated_orders",
+   "fieldtype": "HTML",
+   "label": "Unallocated Orders"
+  },
+  {
+   "fieldname": "user",
+   "fieldtype": "Link",
+   "label": "Account Manager",
+   "options": "User",
+   "reqd": 1
+  },
+  {
+   "fieldname": "contact_details_section",
+   "fieldtype": "Section Break",
+   "label": "Contact Details"
+  },
+  {
+   "fieldname": "mobile_number",
+   "fieldtype": "Data",
+   "label": "Mobile Number"
+  },
+  {
+   "fieldname": "mobile_number_backup",
+   "fieldtype": "Data",
+   "label": "Mobile Number Backup"
+  },
+  {
+   "default": "0",
+   "fieldname": "user_permission",
+   "fieldtype": "Check",
+   "hidden": 1,
+   "label": "user_permission",
+   "read_only": 1
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "fieldname": "delivery_commission",
+   "fieldtype": "Currency",
+   "label": "Delivery Commission"
+  },
+  {
+   "fieldname": "collection_commission",
+   "fieldtype": "Currency",
+   "label": "Commission For Delivery & Collection"
+  },
+  {
+   "fetch_from": "user.email",
+   "fieldname": "email",
+   "fieldtype": "Data",
+   "hidden": 1,
+   "label": "email"
+  },
+  {
+   "default": "1",
+   "fieldname": "allow_split_payment",
+   "fieldtype": "Check",
+   "label": "Allow Split Payment"
+  },
+  {
+   "fieldname": "section_break_5",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_9",
+   "fieldtype": "Section Break"
+  },
+  {
+   "fieldname": "warehouse",
+   "fieldtype": "Link",
+   "label": "Warehouse",
+   "options": "Warehouse",
+   "reqd": 1
+  },
+  {
+   "fieldname": "column_break_16",
+   "fieldtype": "Column Break"
+  }
+ ],
+ "links": [],
+ "modified": "2021-11-12 22:30:04.448014",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Shipping Company",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Delivery Processing"
+  },
+  {
+   "read": 1,
+   "role": "Delivery Source Manager"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Delivery Sales Manager"
+  }
+ ],
+ "search_fields": "company_type,delivery_period",
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

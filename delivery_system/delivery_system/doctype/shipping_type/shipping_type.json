@@ -1,0 +1,150 @@
+{
+ "actions": [],
+ "allow_rename": 1,
+ "autoname": "field:shipping_type",
+ "creation": "2019-08-16 12:10:13.399162",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "enabled",
+  "section_break_2",
+  "company",
+  "shipping_type",
+  "delivery_type",
+  "account_head",
+  "column_break_7",
+  "number_of_hours",
+  "number_of_days",
+  "delivery_fee",
+  "collation_fee",
+  "invoice_value_for_free_shipping",
+  "territory_section",
+  "shipping_type_territory"
+ ],
+ "fields": [
+  {
+   "fieldname": "shipping_type",
+   "fieldtype": "Data",
+   "in_list_view": 1,
+   "label": "Shipping Type",
+   "reqd": 1,
+   "unique": 1
+  },
+  {
+   "depends_on": "eval:doc.delivery_type == 'Per Hour'",
+   "fieldname": "number_of_hours",
+   "fieldtype": "Float",
+   "label": "Number of Hours"
+  },
+  {
+   "fieldname": "delivery_type",
+   "fieldtype": "Select",
+   "in_list_view": 1,
+   "label": "Delivery Type",
+   "options": "\nPer Day\nPer Hour",
+   "reqd": 1
+  },
+  {
+   "depends_on": "eval:doc.delivery_type == 'Per Day'",
+   "fieldname": "number_of_days",
+   "fieldtype": "Float",
+   "label": "Number of Days"
+  },
+  {
+   "fieldname": "delivery_fee",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Delivery Fee"
+  },
+  {
+   "fieldname": "collation_fee",
+   "fieldtype": "Currency",
+   "label": "Collation Fee"
+  },
+  {
+   "fieldname": "territory_section",
+   "fieldtype": "Section Break",
+   "label": "Territory"
+  },
+  {
+   "fieldname": "shipping_type_territory",
+   "fieldtype": "Table",
+   "label": "Extra Charges Depends On Region",
+   "options": "Shipping Type Territory"
+  },
+  {
+   "fieldname": "account_head",
+   "fieldtype": "Link",
+   "label": "Account Head",
+   "options": "Account"
+  },
+  {
+   "fieldname": "company",
+   "fieldtype": "Link",
+   "label": "Company",
+   "options": "Company"
+  },
+  {
+   "default": "1",
+   "fieldname": "enabled",
+   "fieldtype": "Check",
+   "label": "Enabled"
+  },
+  {
+   "default": "0",
+   "description": "The Minimum Value of Bill For Free Shipping",
+   "fieldname": "invoice_value_for_free_shipping",
+   "fieldtype": "Currency",
+   "label": "Invoice Value For Free Shipping"
+  },
+  {
+   "fieldname": "column_break_7",
+   "fieldtype": "Column Break"
+  },
+  {
+   "fieldname": "section_break_2",
+   "fieldtype": "Section Break"
+  }
+ ],
+ "links": [],
+ "modified": "2021-12-03 13:36:20.489705",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Shipping Type",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "read": 1,
+   "role": "Delivery Processing"
+  },
+  {
+   "read": 1,
+   "role": "Delivery Sales"
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Delivery System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "read": 1,
+   "role": "Delivery Source Manager"
+  },
+  {
+   "read": 1,
+   "role": "Delivery Sales Manager"
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "title_field": "shipping_type",
+ "track_changes": 1
+}

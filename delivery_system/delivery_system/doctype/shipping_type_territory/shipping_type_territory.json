@@ -1,0 +1,39 @@
+{
+ "actions": [],
+ "creation": "2019-08-19 08:55:39.540312",
+ "doctype": "DocType",
+ "editable_grid": 1,
+ "engine": "InnoDB",
+ "field_order": [
+  "territory",
+  "fees"
+ ],
+ "fields": [
+  {
+   "fieldname": "territory",
+   "fieldtype": "Link",
+   "in_list_view": 1,
+   "label": "Sub Territory",
+   "options": "Sub Territory"
+  },
+  {
+   "default": "0",
+   "fieldname": "fees",
+   "fieldtype": "Currency",
+   "in_list_view": 1,
+   "label": "Fees"
+  }
+ ],
+ "istable": 1,
+ "links": [],
+ "modified": "2022-11-23 19:23:10.252598",
+ "modified_by": "Administrator",
+ "module": "Delivery System",
+ "name": "Shipping Type Territory",
+ "owner": "Administrator",
+ "permissions": [],
+ "quick_entry": 1,
+ "sort_field": "modified",
+ "sort_order": "DESC",
+ "track_changes": 1
+}

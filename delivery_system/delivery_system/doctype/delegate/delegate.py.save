@@ -1,0 +1,21 @@
+# -*- coding: utf-8 -*-
+# Copyright (c) 2019, Tech Station and contributors
+# For license information, please see license.txt
+
+from __future__ import unicode_literals
+import frappe
+from frappe.model.document import Document
+
+class Delegate(Document):
+	pass
+
+@frappe.whitelist()
+def getBillamount(delegate):
+	bill = frappe.db.sql("""select FORMAT(sum(grand_total),2) from `tabSales Invoice`
+                where docstatus = 1 and shipping_source = %s;""",(delegate))
+        return bill[0][0] if bill else 0.0
+
+@frappe.whitelist()
+def getSymbol(currency):
+        sym = frappe.db.sql("""select symbol from `tabCurrency` where name = %s;""",(currency))
+        return sym[0][0] if sym else 0.0
